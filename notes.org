@@ -1,0 +1,8 @@
+* Integer multiplication
+
+  - Grade school method O(n^2)
+  - Karatsuba O(n^{log_2 3})
+  - S-S Big idea: integer multiplication can be reduced to polynomial
+    multiplication; then use FFT.
+  - Note polynomial multiplication can also be done using integer
+    multiplication!  Use Kronecker substitution.
