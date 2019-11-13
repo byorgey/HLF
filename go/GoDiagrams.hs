@@ -1,3 +1,6 @@
+
+module GoDiagrams where
+
 import           Diagrams.Backend.Rasterific.CmdLine
 import           Diagrams.Prelude
 
