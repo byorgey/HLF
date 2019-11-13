@@ -1,0 +1,39 @@
+Write about computer go
+
+Post 1: My version of Tromp-Taylor rules.  Fun way for computer
+scientists to learn the rules of Go; also easy to write a computer
+program to implement the rules.
+
+( https://senseis.xmp.net/?TrompTaylorRules )
+
+1. Go is played on a 19x19 square grid of points, by two players
+   called Black and White.
+2. Each point on the grid may be colored black, white or empty.
+3. A point P, not colored C, is said to reach C, if there is a path
+   of (vertically or horizontally) adjacent points of P's color from P
+   to a point of color C.
+4. Clearing a color is the process of emptying all points of that
+   color that don't reach empty.
+5. Starting with an empty grid, the players alternate turns, starting
+   with Black.
+6. A turn is either a pass; or a move that doesn't repeat an earlier
+   whole-grid coloring.
+7. A move consists of coloring an empty point one's own color; then
+   clearing the opponent color, and then clearing one's own color.
+8. The game ends after two consecutive passes.
+9. A player's score is the number of points of her color, plus the
+   number of empty points that reach only her color.
+10. The player with the higher score at the end of the game is the
+    winner. Equal scores result in a tie.
+
+XXX edit rule 3 to make it more clear.  Something like p_1 reaches color
+c if there is a sequence of
+points $p_1 p_2 \dots p_n$ such that (i) p_i and p_{i+1} are
+vertically or horizontally adjacent, (ii) p_n has color c; (iii) all
+the rest of the p_i have the same color as p_1.
+
+Fun links?
+
+http://tromp.github.io/go/legal.html
+http://oeis.org/A094777
+http://tromp.github.io/lad.ps
