@@ -1,4 +1,13 @@
 
+-- import           Data.ByteString                     (ByteString, getContents,
+--                                                      unpack)
+-- import           Data.List                           hiding ((!!))
+-- import           Data.SGF
+-- import           Data.Tree
+-- import           Prelude                             hiding (getContents, (!!))
+
+module GoDiagrams where
+
 import           Diagrams.Backend.Rasterific.CmdLine
 import           Diagrams.Prelude
 
@@ -43,4 +52,32 @@ goban n = mconcat
 
     pip = circle hoshiRadius # fc black
 
-main = mainWith (goban 9)
+mkBoard :: [String] -> Diagram B
+mkBoard b = stones <> goban n
+  where
+    n = length (head b)
+    stones = b
+      # map (hcat' (with & catMethod .~ Distrib & sep .~ gridSep) . map drawStone)--
+      # vcat' (with & catMethod .~ Distrib & sep .~ gridSep)
+      # centerXY
+
+    drawStone 'O' = circle stoneRadius # fc white
+    drawStone 'X' = circle stoneRadius # fc black
+    drawStone _   = mempty
+
+------------------------------------------------------------
+-- SGF parsing
+
+-- (!!) = genericIndex
+
+-- grabTree :: [Word8] -> TreeGo
+-- grabTree s = case runParser collection () "stdin" s of
+--   Right ([Game { tree = TreeGo t }], _) -> t
+
+-- grabMoves :: TreeGo -> [MoveGo]
+-- grabMoves n = [move | Right Move { move = Just (color, move) } <- mainLine]
+--   where mainLine = map action . head . transpose . levels $ n
+
+-- parse :: ByteString -> [MoveGo]
+-- parse = grabMoves . grabTree . unpack
+
