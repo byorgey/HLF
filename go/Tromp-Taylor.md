@@ -1,5 +1,5 @@
 ---
-title: "Tromp-Taylor"
+title: "XXX Tromp-Taylor"
 ---
 
     [BLOpts]
@@ -23,13 +23,37 @@ rather advanced level.] which is succinct, logical, and lends itself
 very nicely to computer implementation.   I will present the rules,
 together with some of my own commentary and pictures.
 
-1. *Go is played is on a 19x19 square grid of points, by two players
+1. *Go is played is on a $19 \times 19$ square grid of points, by two players
    called black and white.*
 
-    In practice, XXX
+    Traditionally, a go board looks something like this:
 
+    ![](images/19x19-blank.png)
+
+    You might think this looks like an $18 \times 18$ grid.  However,
+    unlike other square-grid-based games like chess, checkers, or
+    Othello, the grid of points is actually taken to be the *points
+    where horizontal and vertical lines intersect*, including the ones
+    along the edge.  The little dots at some of the intersections are
+    traditional and serve only to help orient the players; they have
+    no impact on the game whatsoever.
+
+    It is quite possible to play Go using a grid size other than $19
+    \times 19$; two other common sizes are $9 \times 9$ and $13 \times
+    13$.  In fact I am surprised that Tromp and Taylor decided to
+    include the specific number $19$ in the rules at all. It does not
+    seem to fit the spirit of the rest of the rules, which capture the
+    logical core of the game but not any of the extra trappings
+    regarding common or traditional practice.
+
+    In any case, $19 \times 19$ is indeed the most common size and the
+    standard for high-level play.
 
 2. *Each point on the grid may be colored black, white or empty.*
+
+    Traditionally, of course, the coloring of a point is represented
+    by the presence of a black or white stone, or the absence of a
+    stone.
 
 3. *A point P, not colored C, is said to reach C, if there is a path
    of (vertically or horizontally) adjacent points of P's color from P
